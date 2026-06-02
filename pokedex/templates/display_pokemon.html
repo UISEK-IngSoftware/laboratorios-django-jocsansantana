@@ -1,24 +1,24 @@
 {% extends "base.html" %}
-{% block title %} {{ pokemon | capfirst }} {% endblock title %} 
+{% block title %} {{ pokemon | capfirst }} {% endblock title %}
 
 {% block content %}
 <p>Has elegido el pokemon: <strong>{{ pokemon | capfirst }}</strong></p>
-<ul class="list-group">
-   
-    <li class="list-group-item">
-       <strong>name: </strong>{{ pokemon.name | capfirst }}
-    </li>
-    <li class="list-group-item">
-        <strong>type: </strong>{{ pokemon.type | capfirst }}
-    </li>
-    <li class="list-group-item">
-        <strong>Height: </strong>{{ pokemon.height }}
-    </li>
-    <li class="list-group-item">
-        <strong>Weight: </strong>{{ pokemon.weight }}
-    </li>
-    <li class="list-group-item">
-        <strong>Trainer: </strong>{{ pokemon.trainer }}
-    </li>
-</ul>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="{{pokemon.picture.url}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ pokemon.name | capfirst }}</h5>
+                <p class="card-text"><strong>Height: </strong>{{ pokemon.height }}</p>
+                <p class="card-text"><strong>Weight: </strong>{{ pokemon.weight }}</p>
+                <p class="card-text"><strong>Trainer: </strong>{{ pokemon.trainer }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" onclick="history.back();" class="btn btn-success">Atrás</button>
+
 {% endblock content %}

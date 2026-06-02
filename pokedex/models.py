@@ -21,7 +21,7 @@ class Pokemon(models.Model):
         ('H','Hada'),
         ('L','Lucha'),
     }
-    type = models.CharField(max_length=50, choices=POKEMON_TYPES, null=False)
+    Type = models.CharField(max_length=50, choices=POKEMON_TYPES, null=False)
     weight = models.FloatField()
     height = models.FloatField()
     trainer = models.ForeignKey(Trainer, on_delete=models.SET_NULL, null=True)
