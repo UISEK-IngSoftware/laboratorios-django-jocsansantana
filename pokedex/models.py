@@ -20,6 +20,7 @@ class Pokemon(models.Model):
         ('P','Planta'),
         ('H','Hada'),
         ('L','Lucha'),
+        ('F','Fantasma'),
     }
     Type = models.CharField(max_length=50, choices=POKEMON_TYPES, null=False)
     weight = models.FloatField()
